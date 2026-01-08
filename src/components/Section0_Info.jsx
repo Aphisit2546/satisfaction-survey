@@ -12,33 +12,12 @@ const Section0_Info = ({ onDashboardClick }) => {
             <h2 className="section-title">ระบบเปิด-ปิดประตูม้วนเหล็กระยะไกล</h2>
 
             {/* Dashboard Button - ย้ายมาด้านบน */}
-            <div style={{ textAlign: 'center', margin: '0 0 30px 0' }}>
+            {/* Dashboard Button */}
+            <div className="dashboard-button-container">
                 <button
                     type="button"
                     onClick={onDashboardClick}
-                    style={{
-                        padding: '14px 32px',
-                        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '12px',
-                        fontSize: '1.05rem',
-                        fontWeight: '700',
-                        cursor: 'pointer',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '10px',
-                        boxShadow: '0 4px 15px rgba(102, 126, 234, 0.3)',
-                        transition: 'all 0.3s ease'
-                    }}
-                    onMouseOver={(e) => {
-                        e.currentTarget.style.transform = 'translateY(-2px)';
-                        e.currentTarget.style.boxShadow = '0 6px 20px rgba(102, 126, 234, 0.4)';
-                    }}
-                    onMouseOut={(e) => {
-                        e.currentTarget.style.transform = 'translateY(0)';
-                        e.currentTarget.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.3)';
-                    }}
+                    className="dashboard-entry-button"
                 >
                     <FaChartBar size={18} />
                     <span>ดูสรุปผลการประเมิน (Dashboard)</span>
