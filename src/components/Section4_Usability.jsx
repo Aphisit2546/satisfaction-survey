@@ -11,7 +11,7 @@ const Section4_Usability = ({ ratings, onRatingChange }) => {
 
     return (
         <div className="section-card">
-            <h2 className="section-title">ส่วนที่ 4: ด้านการใช้งาน (Usability)</h2>
+            <h2 className="section-title">ส่วนที่ 5 : ด้านการใช้งาน (Usability)</h2>
 
             {/* App Screenshots */}
             <div className="app-screenshots">

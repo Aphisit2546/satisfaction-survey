@@ -1,13 +1,50 @@
-import { FaStar } from 'react-icons/fa';
+
+import { FaStar, FaChartBar } from 'react-icons/fa';
 
 // Import images
 import appScreenshot from '../assets/img/202615171335369.png';
 import qrCodeImg from '../assets/img/qrcode_295352192_7422980ee753756d524c79c259e04d37.jpg';
+import './Section0_Info.css';
 
-const Section0_Info = () => {
+const Section0_Info = ({ onDashboardClick }) => {
     return (
         <div className="section-card">
-            <h2 className="section-title">ส่วนที่ 1: ข้อมูลระบบ</h2>
+            <h2 className="section-title">ระบบเปิด-ปิดประตูม้วนเหล็กระยะไกล</h2>
+
+            {/* Dashboard Button - ย้ายมาด้านบน */}
+            <div style={{ textAlign: 'center', margin: '0 0 30px 0' }}>
+                <button
+                    type="button"
+                    onClick={onDashboardClick}
+                    style={{
+                        padding: '14px 32px',
+                        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '12px',
+                        fontSize: '1.05rem',
+                        fontWeight: '700',
+                        cursor: 'pointer',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        boxShadow: '0 4px 15px rgba(102, 126, 234, 0.3)',
+                        transition: 'all 0.3s ease'
+                    }}
+                    onMouseOver={(e) => {
+                        e.currentTarget.style.transform = 'translateY(-2px)';
+                        e.currentTarget.style.boxShadow = '0 6px 20px rgba(102, 126, 234, 0.4)';
+                    }}
+                    onMouseOut={(e) => {
+                        e.currentTarget.style.transform = 'translateY(0)';
+                        e.currentTarget.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.3)';
+                    }}
+                >
+                    <FaChartBar size={18} />
+                    <span>ดูสรุปผลการประเมิน (Dashboard)</span>
+                </button>
+            </div>
+
             {/* App Screenshots */}
             <div className="app-screenshots">
                 <div className="screenshot-main">

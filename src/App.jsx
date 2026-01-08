@@ -13,8 +13,11 @@ import NavigationButtons from './components/NavigationButtons';
 import SuccessModal from './components/SuccessModal';
 import { submitSurvey } from './services/api';
 
+import Dashboard from './components/Dashboard';
+
 function App() {
   const [currentStep, setCurrentStep] = useState(0);
+  const [view, setView] = useState('survey'); // 'survey' or 'dashboard'
   const totalSteps = 7; // 0-6
 
   const [formData, setFormData] = useState({
@@ -166,7 +169,7 @@ function App() {
   const renderStep = () => {
     switch (currentStep) {
       case 0:
-        return <Section0_Info />;
+        return <Section0_Info onDashboardClick={() => setView('dashboard')} />;
       case 1:
         return (
           <>
@@ -212,6 +215,10 @@ function App() {
         return null;
     }
   };
+
+  if (view === 'dashboard') {
+    return <Dashboard onBack={() => setView('survey')} />;
+  }
 
   return (
     <div className="app-container">

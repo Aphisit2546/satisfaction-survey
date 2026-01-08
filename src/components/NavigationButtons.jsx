@@ -1,5 +1,6 @@
 import { FaArrowLeft, FaArrowRight, FaCheckCircle } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
+import './NavigationButtons.css';
 
 const NavigationButtons = ({
     currentStep,

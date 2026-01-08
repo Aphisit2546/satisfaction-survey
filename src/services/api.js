@@ -1,3 +1,4 @@
+
 // services/api.js
 import axios from 'axios';
 
@@ -93,6 +94,43 @@ export const submitSurvey = async (formData) => {
       throw new Error('ไม่สามารถเชื่อมต่อกับ Server ได้ กรุณาตรวจสอบ URL');
     } else {
       // Something else happened
+      console.error('Error message:', error.message);
+      throw error;
+    }
+  }
+};
+
+// ฟังก์ชันดึงสถิติ - ใช้กับ Google Apps Script ที่สร้างไว้
+export const getSurveyResults = async () => {
+  try {
+    console.log('📊 Fetching survey results from:', API_URL);
+    
+    // เรียก API ด้วย GET method และ parameter action=getStats
+    const response = await axios.get(API_URL, {
+      params: {
+        action: 'getStats'
+      },
+      timeout: 30000
+    });
+
+    console.log('✅ Stats Response:', response.data);
+
+    if (response.data && response.data.success) {
+      return response.data.data; // ส่งคืน data object ที่มี design, quality, usability, usefulness
+    } else {
+      throw new Error(response.data?.message || 'Failed to fetch statistics');
+    }
+
+  } catch (error) {
+    console.error('❌ Error fetching survey results:', error);
+    
+    if (error.response) {
+      console.error('Response error:', error.response.data);
+      throw new Error(`Server error: ${error.response.status}`);
+    } else if (error.request) {
+      console.error('No response received:', error.request);
+      throw new Error('ไม่สามารถเชื่อมต่อกับ Server ได้');
+    } else {
       console.error('Error message:', error.message);
       throw error;
     }

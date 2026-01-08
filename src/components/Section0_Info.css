@@ -1,0 +1,191 @@
+/* Dashboard Entry Button */
+.dashboard-entry-button {
+    padding: 14px 28px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.025em;
+}
+
+.dashboard-entry-button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* App Screenshots (Specific to Section0 only? No, reused in Section1. 
+   But user asked to separate. I can import it here if I duplicate, or leave in App.css.
+   Let's check if Section0 uses .app-screenshots. Yes.
+   However, Section1 also uses it. I will keep .app-screenshots in App.css for reuse or duplicate it?
+   Best practice: keep reusable in global. 
+   BUT, I will move the QR Code and other specific things here. 
+*/
+
+/* QR Code Image */
+.qr-code-section {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.qr-code-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.qr-code-image {
+    max-width: 200px;
+    /* Limit size */
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.qr-code-title {
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.qr-code-subtitle {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Warning Box */
+.warning-box {
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    color: #b45309;
+    padding: 16px;
+    border-radius: var(--radius-md);
+    margin-bottom: 24px;
+}
+
+.warning-text {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.warning-text:last-child {
+    margin-bottom: 0;
+}
+
+/* Demo Info Box */
+.demo-info-box,
+.info-box {
+    background: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.demo-title,
+.info-title,
+.rating-scale-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+}
+
+.account-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.account-item {
+    background: white;
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.account-phone {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.account-otp {
+    font-family: monospace;
+    color: var(--primary);
+    background: #eef2ff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+    width: fit-content;
+}
+
+/* Info List */
+.info-list {
+    padding-left: 20px;
+    color: var(--text-secondary);
+}
+
+.info-item {
+    margin-bottom: 8px;
+}
+
+/* Rating Scale */
+.rating-scale-box {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-top: 24px;
+}
+
+.rating-scale-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rating-scale-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.rating-scale-item:last-child {
+    border-bottom: none;
+}
+
+.rating-scale-item .stars {
+    display: flex;
+    gap: 4px;
+    min-width: 140px;
+}
+
+.rating-scale-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.rating-scale-text strong {
+    color: var(--primary);
+    font-weight: 600;
+}

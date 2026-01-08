@@ -1,16 +1,78 @@
-# React + Vite
+# Satisfaction Survey Application (ระบบประเมินความพึงพอใจ)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Applications for collecting user satisfaction data regarding the Remote Rolling Shutter Door System. Built with **React** and **Vite**, featuring a modern, clean UI and a real-time statistical dashboard.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Multi-Step Survey**: A user-friendly, paginated survey form covering General Info, Design, System Quality, Usability, and Usefulness.
+- **Modern UI**: Clean, minimalist design using a Slate/Indigo color palette (`#f8fafc` background, `#4f46e5` primary color).
+- **Dashboard**: A comprehensive dashboard displaying:
+  - Total respondents
+  - Mean and Standard Deviation (S.D.) for overall satisfaction and specific categories.
+  - Detailed breakdown per question.
+- **Integration**: Fetches and submits data to Google Sheets via a custom API script.
+- **Responsive Design**: Fully optimized for Desktop, Tablet, and Mobile screens.
 
-## React Compiler
+## 🛠 Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React.js, Vite
+- **Styling**: Vanilla CSS (Modular Architecture)
+  - Global styles in `App.css`
+  - Component-specific styles in `src/components/*.css`
+- **Icons**: `react-icons` (FontAwesome)
+- **Data Visualization**: Custom statistical components.
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── assets/             # Images (Screenshots, QR Codes)
+├── components/         # React Components
+│   ├── Dashboard.jsx   # Statistics Dashboard
+│   ├── Header.jsx      # App Header
+│   ├── Section*.jsx    # Survey Step Components
+│   └── ...
+├── services/           # API Handling (Google Sheets)
+├── App.css             # Global Styles
+└── main.jsx            # Entry Point
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd satisfaction-survey
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Application
+
+To start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173` (or the port shown in your terminal).
+
+## 📊 Dashboard Access
+
+On the initial screen (Section 0), click the **"ดูสรุปผลการประเมิน (Dashboard)"** button to view real-time statistics of the survey results.
+
+---
+
+**Note**: This is a Demo version. The data shown in the dashboard may be fetched from a test Google Sheet.

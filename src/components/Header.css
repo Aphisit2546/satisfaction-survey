@@ -1,0 +1,36 @@
+/* Header Styles */
+.header-section {
+    background: white;
+    padding: 40px 30px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.main-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 12px;
+    letter-spacing: -0.025em;
+}
+
+.instruction-box {
+    background: var(--bg-page);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    margin-top: 24px;
+    text-align: left;
+}
+
+.instruction-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.instruction-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}

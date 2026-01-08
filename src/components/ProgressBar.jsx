@@ -1,3 +1,4 @@
+import './ProgressBar.css';
 const ProgressBar = ({ currentStep, totalSteps }) => {
     const steps = [
         { number: 0, title: 'ข้อมูลระบบ' },
