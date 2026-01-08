@@ -74,7 +74,7 @@ body {
 
 .app-container {
   width: 95%;
-  max-width: 950px;
+  max-width: 1000px;
   margin: 40px auto;
   background: var(--bg-card);
   border-radius: var(--radius-xl);
